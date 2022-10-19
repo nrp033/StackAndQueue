@@ -20,18 +20,57 @@ namespace StackAndQueue
             Node nodeObj = new Node(data);
             nodeObj.Next = top;
             top = nodeObj;
-            Console.WriteLine("{0} Push to the stack", data);
+            Console.Write( data+ "  ");
         }
         public void Display()
         {
             if (top == null)
-                Console.WriteLine("Stack is Empty here");
+                Console.WriteLine("\nStack is Empty ");
 
             Node temp = top;
             while (temp != null)
             {
-                Console.WriteLine(temp.data + " ");
+                Console.Write(temp.data + "  ");
                 temp = temp.Next;
+            }
+        }
+
+        public void Peek()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is Empty");
+                return;
+            }
+            Console.WriteLine("\n{0} element is at the top of stack", this.top.data);
+        }
+
+        //pop method is used to delete element from the stack
+
+        public void pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is Empty");
+                return;
+            }
+
+            Console.Write("\n{0} Deleted from stack ", this.top.data);
+
+            this.top = this.top.Next;
+
+        }
+
+        //IsEmpty method is used to empty the stack
+
+        public void IsEmpty()
+        {
+            //just call peek and pop method to empty stack
+
+            while (this.top != null)
+            {
+                Peek();
+                pop();
             }
         }
     }
