@@ -30,6 +30,17 @@ namespace StackAndQueue
             Console.WriteLine("{0} Inserted into Queue", newnode.data);
 
         }
+        public void Dequeue()
+        {
+            if (this.front == null)
+            {
+                Console.WriteLine("Deletion of elements is not possible because Queue is Empty");
+                return;
+            }
+            Console.WriteLine("\nElement Deleted from queue : {0} ", this.front.data);
+            this.front = this.front.Next;
+        }
+
 
         //Display method is used to display elements in queue
 
